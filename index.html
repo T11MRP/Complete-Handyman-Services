@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Complete Handyman Services | Repairs, Maintenance &amp; Improvements — Walsall</title>
+<meta name="description" content="Complete Handyman Services — reliable repairs, maintenance and home improvements across Walsall and the West Midlands. Tiling, painting, flat-pack, property maintenance and more. Free no-obligation quotes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --surface-1:#0A0A0A;
+  --surface-2:#141414;
+  --surface-3:#1C1C1C;
+  --ink:#F5F1E8;
+  --muted:#B8B2A6;
+  --accent:#C9B896;
+  --accent-bright:#DCCBA3;
+  --line:rgba(201,184,150,.25);
+  --line-soft:rgba(201,184,150,.14);
+  --glass:rgba(255,255,255,.035);
+  --shadow:0 18px 50px rgba(0,0,0,.55);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--surface-1);
+  color:var(--ink);
+  font-family:'Jost',system-ui,sans-serif;
+  font-weight:300;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;line-height:1.08;letter-spacing:.01em}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.wrap{width:100%;max-width:1180px;margin:0 auto;padding-left:24px;padding-right:24px}
+
+/* ---- eyebrow ---- */
+.eyebrow{
+  font-family:'Jost',sans-serif;font-weight:500;
+  text-transform:uppercase;letter-spacing:.32em;
+  font-size:.72rem;color:var(--accent);
+  display:inline-flex;align-items:center;gap:.7rem;
+}
+.eyebrow::before{content:"";width:26px;height:1px;background:var(--accent);opacity:.7}
+
+/* ---- nav ---- */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding-top:18px;padding-bottom:18px;
+  background:rgba(10,10,10,0);
+  transition:background .35s ease,padding .35s ease,border-color .35s ease;
+  border-bottom:1px solid transparent;
+}
+.nav.scrolled{
+  background:rgba(10,10,10,.82);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  padding-top:12px;padding-bottom:12px;
+  border-bottom:1px solid var(--line-soft);
+}
+.nav__inner{display:flex;align-items:center;justify-content:space-between}
+.nav__logo img{height:52px;width:auto}
+.nav__links{display:flex;align-items:center;gap:34px}
+.nav__links a{
+  font-size:.82rem;text-transform:uppercase;letter-spacing:.16em;
+  color:var(--muted);font-weight:400;transition:color .25s ease;
+}
+.nav__links a:hover{color:var(--ink)}
+.nav__cta{
+  padding:.62rem 1.35rem;border:1px solid var(--accent);
+  border-radius:40px;color:var(--accent)!important;letter-spacing:.14em;
+  transition:background .25s ease,color .25s ease;
+}
+.nav__cta:hover{background:var(--accent);color:#0A0A0A!important}
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:8px}
+.burger span{width:26px;height:2px;background:var(--ink);transition:transform .3s ease,opacity .3s ease}
+.burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+.mobile-menu{
+  position:fixed;inset:0 0 0 auto;width:min(80vw,320px);z-index:99;
+  background:rgba(12,12,12,.97);backdrop-filter:blur(18px);
+  transform:translateX(100%);transition:transform .4s cubic-bezier(.5,0,.2,1);
+  padding-top:110px;padding-left:34px;padding-right:34px;
+  border-left:1px solid var(--line-soft);
+  display:flex;flex-direction:column;gap:26px;
+}
+.mobile-menu.open{transform:translateX(0)}
+.mobile-menu a{font-size:1.05rem;text-transform:uppercase;letter-spacing:.18em;color:var(--muted)}
+.mobile-menu a:hover{color:var(--accent)}
+
+/* ---- hero ---- */
+.hero{
+  position:relative;min-height:100vh;display:flex;align-items:center;
+  padding-top:140px;padding-bottom:90px;
+  background-color:var(--surface-1);
+  background-image:linear-gradient(180deg,rgba(10,10,10,.35),rgba(10,10,10,.7)),
+                   radial-gradient(ellipse 90% 60% at 72% 30%,rgba(201,184,150,.10),transparent 65%);
+  overflow:hidden;
+}
+.hero__media{
+  position:absolute;inset:0;z-index:0;
+}
+.hero__media img{width:100%;height:100%;object-fit:cover;opacity:.32;filter:grayscale(.15) contrast(1.05)}
+.hero__media::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(90deg,rgba(10,10,10,.94) 0%,rgba(10,10,10,.72) 42%,rgba(10,10,10,.4) 100%);
+}
+.hero__inner{position:relative;z-index:2;max-width:720px}
+.hero h1{
+  font-size:clamp(3rem,8vw,6.2rem);margin-top:26px;margin-bottom:8px;
+  letter-spacing:.005em;
+}
+.hero h1 .thin{display:block;font-style:italic;font-weight:400;color:var(--accent-bright);font-size:.62em}
+.hero__sub{
+  max-width:520px;margin-top:26px;color:var(--muted);
+  font-size:1.08rem;font-weight:300;
+}
+.hero__actions{display:flex;flex-wrap:wrap;gap:16px;margin-top:38px}
+.btn{
+  display:inline-flex;align-items:center;gap:.6rem;
+  padding:.95rem 1.9rem;border-radius:44px;
+  font-family:'Jost',sans-serif;font-weight:500;font-size:.86rem;
+  text-transform:uppercase;letter-spacing:.14em;
+  transition:transform .28s ease,box-shadow .28s ease,background .28s ease,color .28s ease;
+}
+.btn--primary{background:var(--accent);color:#0A0A0A;box-shadow:0 12px 30px rgba(201,184,150,.22)}
+.btn--primary:hover{transform:translateY(-3px);box-shadow:0 18px 40px rgba(201,184,150,.32);background:var(--accent-bright)}
+.btn--ghost{border:1px solid var(--line);color:var(--ink)}
+.btn--ghost:hover{transform:translateY(-3px);border-color:var(--accent);color:var(--accent)}
+
+/* trust strip */
+.hero__trust{display:flex;flex-wrap:wrap;gap:12px;margin-top:42px}
+.pill{
+  display:inline-flex;align-items:center;gap:.55rem;
+  padding:.55rem 1.05rem;border-radius:40px;
+  background:rgba(15,15,15,.55);backdrop-filter:blur(8px);
+  border:1px solid var(--line);
+  font-size:.82rem;letter-spacing:.04em;color:var(--ink);font-weight:400;
+}
+.pill svg{width:15px;height:15px;stroke:var(--accent);fill:none;stroke-width:1.6}
+
+/* ---- section base ---- */
+.section{padding-top:110px;padding-bottom:110px}
+.section--s1{background-color:var(--surface-1)}
+.section--s2{
+  background-color:var(--surface-2);
+  background-image:linear-gradient(165deg,rgba(255,255,255,.03),rgba(0,0,0,.10));
+}
+.section--enh{
+  background-color:var(--surface-1);
+  background-image:radial-gradient(ellipse 70% 90% at 15% 10%,rgba(201,184,150,.07),transparent 60%),
+                   linear-gradient(180deg,rgba(255,255,255,.02),rgba(0,0,0,.05));
+}
+.sec-head{max-width:640px;margin-bottom:56px}
+.sec-head h2{font-size:clamp(2.1rem,4.6vw,3.2rem);margin-top:18px}
+.sec-head p{color:var(--muted);margin-top:16px;font-weight:300}
+
+/* ---- services ---- */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{
+  background:var(--glass);border:1px solid var(--line-soft);
+  border-radius:16px;padding:32px 28px;
+  backdrop-filter:blur(6px);
+  transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease;
+}
+.card:hover{transform:translateY(-6px);border-color:var(--line);box-shadow:var(--shadow)}
+.card__ico{
+  width:46px;height:46px;border-radius:12px;
+  display:flex;align-items:center;justify-content:center;
+  background:rgba(201,184,150,.10);border:1px solid var(--line);margin-bottom:20px;
+}
+.card__ico svg{width:22px;height:22px;stroke:var(--accent);fill:none;stroke-width:1.5}
+.card h3{font-size:1.55rem;margin-bottom:10px}
+.card p{color:var(--muted);font-size:.94rem}
+.card--feat{
+  grid-column:span 2;
+  background-color:var(--surface-3);
+  background-image:radial-gradient(ellipse 80% 120% at 90% 0%,rgba(201,184,150,.14),transparent 60%);
+  border:1px solid var(--line);
+  display:flex;flex-direction:column;justify-content:center;
+  position:relative;overflow:hidden;
+}
+.card--feat .tag{
+  align-self:flex-start;font-family:'Jost',sans-serif;font-size:.68rem;
+  text-transform:uppercase;letter-spacing:.24em;color:var(--accent);
+  padding:.35rem .85rem;border:1px solid var(--line);border-radius:30px;margin-bottom:18px;
+}
+.card--feat h3{font-size:2.2rem}
+.card--feat p{max-width:460px;font-size:1rem}
+
+/* service checklist */
+.svc-list{
+  margin-top:44px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px 34px;
+}
+.svc-list li{
+  list-style:none;display:flex;align-items:center;gap:.7rem;
+  color:var(--muted);font-size:.94rem;padding-top:9px;padding-bottom:9px;
+  border-bottom:1px solid var(--line-soft);
+}
+.svc-list li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent);flex:none}
+
+/* ---- why us ---- */
+.why{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center}
+.why__media{position:relative;border-radius:18px;overflow:hidden;box-shadow:var(--shadow)}
+.why__media img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/5}
+.why__media::after{content:"";position:absolute;inset:0;border:1px solid var(--line);border-radius:18px;pointer-events:none}
+.why__list{margin-top:30px;display:flex;flex-direction:column;gap:24px}
+.why__item{display:flex;gap:18px}
+.why__num{font-family:'Cormorant Garamond',serif;font-size:1.6rem;color:var(--accent);line-height:1;flex:none;width:34px}
+.why__item h3{font-size:1.35rem;margin-bottom:5px}
+.why__item p{color:var(--muted);font-size:.94rem}
+
+/* ---- areas ---- */
+.areas{text-align:center}
+.area-tags{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:36px}
+.area-tags span{
+  padding:.6rem 1.3rem;border:1px solid var(--line-soft);border-radius:40px;
+  color:var(--muted);font-size:.9rem;letter-spacing:.04em;
+  transition:border-color .25s ease,color .25s ease;
+}
+.area-tags span:hover{border-color:var(--accent);color:var(--ink)}
+
+/* ---- gallery ---- */
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.gallery figure{
+  position:relative;overflow:hidden;border-radius:14px;cursor:pointer;
+  aspect-ratio:3/4;border:1px solid var(--line-soft);
+}
+.gallery img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.gallery figure:hover img{transform:scale(1.06)}
+.gallery figure::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,transparent 55%,rgba(10,10,10,.55));
+  opacity:0;transition:opacity .3s ease;
+}
+.gallery figure:hover::after{opacity:1}
+
+/* lightbox */
+.lb{
+  position:fixed;inset:0;z-index:200;display:none;
+  background:rgba(6,6,6,.94);backdrop-filter:blur(6px);
+  align-items:center;justify-content:center;
+}
+.lb.open{display:flex}
+.lb img{max-width:88vw;max-height:82vh;border-radius:8px;box-shadow:var(--shadow)}
+.lb__btn{
+  position:absolute;top:50%;transform:translateY(-50%);
+  width:54px;height:54px;border-radius:50%;
+  background:rgba(20,20,20,.7);border:1px solid var(--line);
+  color:var(--ink);font-size:1.5rem;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;transition:background .25s ease;
+}
+.lb__btn:hover{background:var(--accent);color:#0A0A0A}
+.lb__prev{left:4vw}.lb__next{right:4vw}
+.lb__close{top:5vh;right:5vw;transform:none;width:46px;height:46px;font-size:1.2rem}
+
+/* ---- contact ---- */
+.contact{
+  background-color:var(--surface-1);
+  background-image:radial-gradient(ellipse 60% 80% at 50% 0%,rgba(201,184,150,.10),transparent 60%);
+}
+.contact__grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.contact h2{font-size:clamp(2.2rem,5vw,3.4rem)}
+.contact__lead{color:var(--muted);margin-top:18px;max-width:440px}
+.contact__card{
+  background:var(--glass);border:1px solid var(--line);border-radius:18px;
+  padding:40px;backdrop-filter:blur(8px);box-shadow:var(--shadow);
+}
+.crow{display:flex;align-items:center;gap:16px;padding-top:18px;padding-bottom:18px;border-bottom:1px solid var(--line-soft)}
+.crow:last-child{border-bottom:0}
+.crow__ico{
+  width:44px;height:44px;border-radius:12px;flex:none;
+  background:rgba(201,184,150,.10);border:1px solid var(--line);
+  display:flex;align-items:center;justify-content:center;
+}
+.crow__ico svg{width:20px;height:20px;stroke:var(--accent);fill:none;stroke-width:1.5}
+.crow__label{font-size:.72rem;text-transform:uppercase;letter-spacing:.18em;color:var(--muted)}
+.crow__val{font-size:1.05rem;color:var(--ink)}
+.contact__actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}
+
+/* ---- footer ---- */
+.footer{background-color:var(--surface-3);padding-top:56px;padding-bottom:40px;border-top:1px solid var(--line-soft)}
+.footer__inner{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:24px}
+.footer__logo img{height:44px;opacity:.9}
+.footer__tag{color:var(--muted);font-size:.86rem;letter-spacing:.1em;text-transform:uppercase}
+.footer__legal{color:var(--muted);font-size:.78rem;opacity:.7;margin-top:28px;text-align:center}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* responsive */
+@media(max-width:900px){
+  .nav__links{display:none}
+  .burger{display:flex}
+  .svc-grid{grid-template-columns:1fr 1fr}
+  .card--feat{grid-column:span 2}
+  .svc-list{grid-template-columns:repeat(2,1fr)}
+  .why{grid-template-columns:1fr;gap:40px}
+  .contact__grid{grid-template-columns:1fr;gap:36px}
+}
+@media(max-width:560px){
+  .nav__logo img{height:44px}
+  .section{padding-top:80px;padding-bottom:80px}
+  .svc-grid{grid-template-columns:1fr}
+  .card--feat{grid-column:span 1}
+  .svc-list{grid-template-columns:1fr}
+  .gallery{grid-template-columns:1fr}
+  .contact__card{padding:28px}
+  .hero__actions .btn{flex:1;justify-content:center}
+}
+@media(prefers-reduced-motion:reduce){
+  *{transition:none!important;animation:none!important;scroll-behavior:auto!important}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="wrap nav__inner">
+    <a href="#top" class="nav__logo"><img src="images/logo.png" alt="Complete Handyman Services"></a>
+    <div class="nav__links">
+      <a href="#services">Services</a>
+      <a href="#why">Why Us</a>
+      <a href="#work">Recent Work</a>
+      <a href="#areas">Areas</a>
+      <a href="#contact" class="nav__cta">Get a Quote</a>
+    </div>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#services">Services</a>
+  <a href="#why">Why Us</a>
+  <a href="#work">Recent Work</a>
+  <a href="#areas">Areas</a>
+  <a href="#contact">Get a Quote</a>
+</div>
+
+<!-- HERO -->
+<header class="hero" id="top">
+  <div class="hero__media"><img src="images/hero.jpg" alt="Freshly tiled kitchen with gloss-grey units and marble-effect worktop"></div>
+  <div class="wrap hero__inner">
+    <span class="eyebrow reveal">Repairs · Maintenance · Improvements</span>
+    <h1 class="reveal">Reliable Repairs.<span class="thin">Beautiful Homes.</span></h1>
+    <p class="hero__sub reveal">Complete Handyman Services delivers clean, careful workmanship across Walsall and the West Midlands — from kitchen tiling to full property maintenance. Quality work, reliable service, no shortcuts.</p>
+    <div class="hero__actions reveal">
+      <a href="#contact" class="btn btn--primary">Get a Free Quote</a>
+      <a href="#work" class="btn btn--ghost">See Recent Work</a>
+    </div>
+    <div class="hero__trust reveal">
+      <span class="pill"><svg viewBox="0 0 24 24"><path d="M12 2l3 6 6 .5-4.5 4 1.5 6-6-3.5-6 3.5 1.5-6L3 8.5 9 8z"/></svg>5-Star Standard</span>
+      <span class="pill"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4-3 7-7 9-4-2-7-5-7-9V6z"/></svg>Fully Insured &amp; Vetted</span>
+      <span class="pill"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg>Clear, Honest Quotes</span>
+    </div>
+  </div>
+</header>
+
+<!-- SERVICES -->
+<section class="section section--enh" id="services">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">What We Do</span>
+      <h2>One trade for the whole to-do list.</h2>
+      <p>From the small jobs that never get done to the finishing work that makes a room, we handle it properly — first time, to a high standard.</p>
+    </div>
+    <div class="svc-grid">
+      <article class="card card--feat reveal">
+        <span class="tag">Most Requested</span>
+        <h3>Kitchen Tiling &amp; Finishing</h3>
+        <p>Wall tiling and finishing work that brings a kitchen together — straight lines, clean cuts, neat joints. Crisp white metro against gloss units and marble-effect worktops, finished to a sharp, modern standard.</p>
+      </article>
+      <article class="card reveal">
+        <div class="card__ico"><svg viewBox="0 0 24 24"><path d="M3 9l9-6 9 6v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><path d="M9 21V12h6v9"/></svg></div>
+        <h3>Property Maintenance</h3>
+        <p>Ongoing upkeep and repairs to keep homes and rentals in top condition.</p>
+      </article>
+      <article class="card reveal">
+        <div class="card__ico"><svg viewBox="0 0 24 24"><path d="M4 20h16"/><path d="M6 20V8l6-4 6 4v12"/><path d="M10 20v-5h4v5"/></svg></div>
+        <h3>Painting &amp; Decorating</h3>
+        <p>Walls, ceilings and woodwork finished cleanly for a fresh, lasting look.</p>
+      </article>
+      <article class="card reveal">
+        <div class="card__ico"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18"/><path d="M9 4v16"/></svg></div>
+        <h3>Flat-Pack &amp; Assembly</h3>
+        <p>Furniture, shelving and storage built and fitted securely, no fuss.</p>
+      </article>
+    </div>
+
+    <ul class="svc-list reveal">
+      <li>Furniture &amp; flat-pack assembly</li>
+      <li>Shelving &amp; storage</li>
+      <li>Wall repairs &amp; hanging</li>
+      <li>Doors, handles &amp; locks</li>
+      <li>Flooring &amp; finishing work</li>
+      <li>Wall &amp; floor tiling</li>
+      <li>Brick &amp; stone repointing</li>
+      <li>UPVC window &amp; door fitting &amp; repairs</li>
+      <li>Garden maintenance &amp; repairs</li>
+      <li>Property maintenance</li>
+      <li>General DIY &amp; odd jobs</li>
+      <li>No job too small</li>
+    </ul>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="section section--s2" id="why">
+  <div class="wrap why">
+    <div class="why__media reveal">
+      <img src="images/kitchen-2.jpg" alt="Completed kitchen with metro-tiled splashback and clean finishing">
+    </div>
+    <div class="reveal">
+      <span class="eyebrow">Why Complete</span>
+      <h2 style="font-size:clamp(2rem,4.4vw,3rem);margin-top:16px">The difference is in the finish.</h2>
+      <p style="color:var(--muted);margin-top:14px">A lot of what sets a job apart is the detail — the parts most people never notice until they're wrong. We take the time to get everything looking right.</p>
+      <div class="why__list">
+        <div class="why__item">
+          <span class="why__num">01</span>
+          <div><h3>Clean, careful workmanship</h3><p>Straight lines, neat joints and a tidy site — every job finished to a high standard.</p></div>
+        </div>
+        <div class="why__item">
+          <span class="why__num">02</span>
+          <div><h3>Fully insured &amp; vetted</h3><p>Reliable, trustworthy service you can have in your home with confidence.</p></div>
+        </div>
+        <div class="why__item">
+          <span class="why__num">03</span>
+          <div><h3>Clear, honest quotes</h3><p>Free, no-obligation pricing up front — no surprises, no shortcuts.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORK / GALLERY -->
+<section class="section section--enh" id="work">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Recent Work</span>
+      <h2>A recent kitchen, finished properly.</h2>
+      <p>Wall tiling and finishing on a full kitchen fit-out — white metro tiles setting off gloss-grey units and marble-effect worktops.</p>
+    </div>
+    <div class="gallery">
+      <figure class="reveal" data-i="0"><img src="images/kitchen-1.jpg" alt="Gloss-grey kitchen units with integrated oven and metro-tiled wall"></figure>
+      <figure class="reveal" data-i="1"><img src="images/kitchen-2.jpg" alt="Kitchen worktop, hob and extractor with white metro splashback"></figure>
+      <figure class="reveal" data-i="2"><img src="images/tiling-detail.jpg" alt="Close-up of bevelled white metro tiles with clean grout lines"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- AREAS -->
+<section class="section section--s1" id="areas">
+  <div class="wrap areas reveal">
+    <span class="eyebrow" style="justify-content:center">Where We Work</span>
+    <h2 style="font-size:clamp(2rem,4.6vw,3.1rem);margin-top:16px">Walsall &amp; surrounding areas.</h2>
+    <p style="color:var(--muted);margin-top:14px;max-width:520px;margin-left:auto;margin-right:auto">Based in Ryecroft and covering the wider West Midlands. If you're nearby, get in touch.</p>
+    <div class="area-tags">
+      <span>Walsall</span><span>Ryecroft</span><span>Bloxwich</span><span>Willenhall</span>
+      <span>Darlaston</span><span>Aldridge</span><span>Brownhills</span><span>Pelsall</span>
+      <span>Wednesbury</span><span>West Midlands</span>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section contact" id="contact">
+  <div class="wrap contact__grid">
+    <div class="reveal">
+      <span class="eyebrow">Get In Touch</span>
+      <h2>Message for your free, no-obligation quote.</h2>
+      <p class="contact__lead">Tell us about the job and we'll get straight back to you. Quality work, clean finish, no shortcuts.</p>
+      <div class="contact__actions">
+        <a href="tel:07516235224" class="btn btn--primary">Call 07516 235224</a>
+        <a href="https://www.facebook.com/profile.php?id=61592815597023" target="_blank" rel="noopener" class="btn btn--ghost">Message on Facebook</a>
+      </div>
+    </div>
+    <div class="contact__card reveal">
+      <a href="tel:07516235224" class="crow">
+        <span class="crow__ico"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.4 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></span>
+        <div><div class="crow__label">Phone</div><div class="crow__val">07516 235224</div></div>
+      </a>
+      <a href="mailto:rowandavisbuild@gmail.com" class="crow">
+        <span class="crow__ico"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
+        <div><div class="crow__label">Email</div><div class="crow__val">rowandavisbuild@gmail.com</div></div>
+      </a>
+      <a href="https://www.facebook.com/profile.php?id=61592815597023" target="_blank" rel="noopener" class="crow">
+        <span class="crow__ico"><svg viewBox="0 0 24 24"><path d="M14 9h3V6h-3a4 4 0 0 0-4 4v2H8v3h2v6h3v-6h3l1-3h-4v-2a1 1 0 0 1 1-1z"/></svg></span>
+        <div><div class="crow__label">Facebook</div><div class="crow__val">Complete Handyman Services</div></div>
+      </a>
+      <div class="crow">
+        <span class="crow__ico"><svg viewBox="0 0 24 24"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+        <div><div class="crow__label">Area</div><div class="crow__val">Walsall &amp; surrounding areas</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__inner">
+      <div class="footer__logo"><img src="images/logo.png" alt="Complete Handyman Services"></div>
+      <div class="footer__tag">Quality Work · Reliable Service</div>
+    </div>
+    <div class="footer__legal">© <span id="yr"></span> Complete Handyman Services · Walsall, West Midlands · Fully Insured &amp; Vetted</div>
+  </div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lb" id="lb">
+  <button class="lb__btn lb__close" id="lbClose" aria-label="Close">✕</button>
+  <button class="lb__btn lb__prev" id="lbPrev" aria-label="Previous">‹</button>
+  <img id="lbImg" src="" alt="">
+  <button class="lb__btn lb__next" id="lbNext" aria-label="Next">›</button>
+</div>
+
+<script>
+// nav scroll
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>40));
+
+// burger
+const burger=document.getElementById('burger'),mm=document.getElementById('mobileMenu');
+function toggleMenu(force){
+  const open=force!==undefined?force:!mm.classList.contains('open');
+  mm.classList.toggle('open',open);
+  burger.classList.toggle('open',open);
+  burger.setAttribute('aria-expanded',open);
+}
+burger.addEventListener('click',()=>toggleMenu());
+mm.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>toggleMenu(false)));
+
+// reveal
+const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.14});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+// lightbox
+const imgs=[...document.querySelectorAll('.gallery img')].map(i=>({src:i.src,alt:i.alt}));
+const lb=document.getElementById('lb'),lbImg=document.getElementById('lbImg');
+let idx=0;
+function show(i){idx=(i+imgs.length)%imgs.length;lbImg.src=imgs[idx].src;lbImg.alt=imgs[idx].alt}
+document.querySelectorAll('.gallery figure').forEach(f=>f.addEventListener('click',()=>{show(+f.dataset.i);lb.classList.add('open')}));
+document.getElementById('lbClose').addEventListener('click',()=>lb.classList.remove('open'));
+document.getElementById('lbPrev').addEventListener('click',e=>{e.stopPropagation();show(idx-1)});
+document.getElementById('lbNext').addEventListener('click',e=>{e.stopPropagation();show(idx+1)});
+lb.addEventListener('click',e=>{if(e.target===lb)lb.classList.remove('open')});
+addEventListener('keydown',e=>{if(!lb.classList.contains('open'))return;if(e.key==='Escape')lb.classList.remove('open');if(e.key==='ArrowLeft')show(idx-1);if(e.key==='ArrowRight')show(idx+1)});
+
+document.getElementById('yr').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
